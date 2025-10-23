@@ -30,7 +30,8 @@ app.post("/send-form", async (req, res) => {
       email: process.env.BREVO_SENDER_EMAIL,
       name: "Dag-mar website",
     },
-    to: [{ email: process.env.BREVO_SENDER_EMAIL, name: "dag-mar" }],
+    // to: [{ email: process.env.BREVO_SENDER_EMAIL, name: "dag-mar" }],
+    to: [{ email: "jakub.rezler96@gmail.com", name: "dag-mar" }],
     subject: `${subject}`,
     htmlContent: `
       <html>
@@ -45,7 +46,7 @@ app.post("/send-form", async (req, res) => {
 
   try {
     const response = await brevoApi.sendTransacEmail(sendSmtpEmail);
-    console.log("Mail wysłany:", response);
+    console.log("Mail wysłany:");
     res.json({ success: true, message: "Mail wysłany!" });
   } catch (error) {
     console.error("Błąd przy wysyłce:", error);
