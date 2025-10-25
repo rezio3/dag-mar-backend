@@ -46,8 +46,7 @@ app.post("/send-form", upload.single("file"), async (req, res) => {
         email: process.env.BREVO_SENDER_EMAIL,
         name: "Dag-mar website",
       },
-      // to: [{ email: "reklama@dag-mar.pl", name: "Dag-mar" }],
-      to: [{ email: "jakub.rezler96@gmail.com", name: "Dag-mar" }],
+      to: [{ email: "reklama@dag-mar.pl", name: "Dag-mar" }],
       subject,
       htmlContent: `
         <html>
