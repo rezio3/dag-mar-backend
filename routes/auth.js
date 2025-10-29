@@ -11,7 +11,7 @@ router.post("/login", (req, res) => {
     password === process.env.ADMIN_PASSWORD
   ) {
     const token = jwt.sign({ role: "admin" }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "10m",
     });
 
     return res.json({ success: true, token });
